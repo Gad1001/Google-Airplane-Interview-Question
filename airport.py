@@ -59,7 +59,7 @@ def GetMissingRoutes(airports,routes,startingAirport):
         tmp_source = ""
         for source,allSubDest in groups.items():
             if (not (source == startingAirport)):
-                #We don't want to filter out a group whom start at the startingAirport because of reasons that i will explain at end of code
+                #We don't want to filter out a group whom start at the startingAirport because of a case where wh have a groups whom source is "X" and have subDest whom is startingAirport and also startingAirport have subDest whom is "X"
                 for inner_loop_source,inner_loop_allSubDest in groups.items():
                     if (not (source == inner_loop_source)):
                         #if they are the same we look at ourself group so no point checking this
